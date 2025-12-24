@@ -1,0 +1,46 @@
+{
+  "name": "coffee-widget",
+  "version": "1.0.2",
+  "description": "Coffee/Drinks recipes widget",
+  "author": "",
+  "license": "ISC",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.sylvio.coffeewidget",
+    "productName": "Coffee Widget",
+    "files": [
+      "main.js",
+      "preload.js",
+      "public/**/*",
+      "scripts/**/*",
+      "data/**/*",
+      "build/icon.png"
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "icon": "build/icon.png"
+    },
+    "win": {
+      "icon": "build/icon.png",
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "linux": {
+      "icon": "build/icon.png",
+      "target": [
+        "AppImage"
+      ]
+    }
+  },
+  "devDependencies": {
+    "electron": "^38.1.2",
+    "electron-builder": "^26.0.12"
+  }
+}
